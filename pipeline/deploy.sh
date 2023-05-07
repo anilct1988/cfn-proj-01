@@ -10,7 +10,7 @@ AWS_REGION="ap-southeast-2"
 # Create the CloudFormation stack
 aws cloudformation deploy \
   --stack-name $STACK_NAME \
-  --template-file file://$TEMPLATE_FILE \
+  --template-file $TEMPLATE_FILE \
   --region $AWS_REGION
 
 # Wait for stack creation to complete
