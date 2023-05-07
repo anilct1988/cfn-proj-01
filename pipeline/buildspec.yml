@@ -9,4 +9,9 @@ phases:
   build:
     commands:
       - echo Building application...
+      - aws --version
+      - ls -l
+      - chmod +x pipeline/deploy.sh
+      - pipeline/deploy.sh
+      
 
