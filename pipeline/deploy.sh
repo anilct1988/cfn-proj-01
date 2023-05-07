@@ -11,8 +11,7 @@ AWS_REGION="ap-southeast-2"
 aws cloudformation deploy \
   --stack-name $STACK_NAME \
   --template-file file://$TEMPLATE_FILE \
-  --region $AWS_REGION \
-  --parameter-overrides EC2UserData="#!/bin/bash\nsudo yum update -y\nsudo yum install httpd -y\nsudo systemctl start httpd\nsudo systemctl enable httpd\necho '<html><body><h1>Hello World!</h1></body></html>' > /var/www/html/index.html" 
+  --region $AWS_REGION
 
 # Wait for stack creation to complete
 # aws cloudformation wait stack-create-complete \
