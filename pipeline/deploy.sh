@@ -5,14 +5,14 @@ STACK_NAME="my-ec2-stack"
 TEMPLATE_FILE="pipeline/ec2.yml"
 #PARAMETERS_FILE="my-parameters.json"
 AWS_REGION="ap-southeast-2"
-INSTANCE_TYPE="t2.micro"
 #KEY_NAME="my-keypair"
 
 # Create the CloudFormation stack
-aws cloudformation create-stack \
+aws cloudformation deploy \
   --stack-name $STACK_NAME \
-  --template-body file://$TEMPLATE_FILE \
-  --region $AWS_REGION
+  --template-file file://$TEMPLATE_FILE \
+  --region $AWS_REGION \
+  --parameter-overrides EC2UserData="#!/bin/bash\nsudo yum update -y\nsudo yum install httpd -y\nsudo systemctl start httpd\nsudo systemctl enable httpd\necho '<html><body><h1>Hello World!</h1></body></html>' > /var/www/html/index.html" 
 
 # Wait for stack creation to complete
 # aws cloudformation wait stack-create-complete \
