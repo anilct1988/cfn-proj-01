@@ -2,7 +2,7 @@
 
 # Variables
 STACK_NAME="my-ec2-stack"
-TEMPLATE_FILE="ec2.yml"
+TEMPLATE_FILE="pipeline/ec2.yml"
 #PARAMETERS_FILE="my-parameters.json"
 AWS_REGION="ap-southeast-2"
 INSTANCE_TYPE="t2.micro"
