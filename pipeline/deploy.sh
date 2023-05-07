@@ -12,7 +12,6 @@ INSTANCE_TYPE="t2.micro"
 aws cloudformation create-stack \
   --stack-name $STACK_NAME \
   --template-body file://$TEMPLATE_FILE \
-  #--parameters file://$PARAMETERS_FILE \
   --region $AWS_REGION
 
 # Wait for stack creation to complete
