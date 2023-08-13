@@ -6,12 +6,15 @@ TEMPLATE_FILE="pipeline/ec2.yml"
 #PARAMETERS_FILE="my-parameters.json"
 AWS_REGION="ap-southeast-2"
 #KEY_NAME="my-keypair"
+echo "Hello World!!"
+ls -lrt
+echo "Hello World again!!"
 
 # Create the CloudFormation stack
-aws cloudformation deploy \
-  --stack-name $STACK_NAME \
-  --template-file $TEMPLATE_FILE \
-  --region $AWS_REGION
+# aws cloudformation deploy \
+#   --stack-name $STACK_NAME \
+#   --template-file $TEMPLATE_FILE \
+#   --region $AWS_REGION
 
 # Wait for stack creation to complete
 # aws cloudformation wait stack-create-complete \
