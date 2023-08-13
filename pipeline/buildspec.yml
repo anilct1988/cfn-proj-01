@@ -15,4 +15,6 @@ phases:
       # - pipeline/deploy.sh
       - npm install -g cfn-lint
       - cfn-lint --version
+      - cfn-lint validate pipeline/ec2.yml
+      
 
