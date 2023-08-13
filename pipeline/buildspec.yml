@@ -16,5 +16,6 @@ phases:
       - npm install -g cfn-lint
       - cfn-lint --version
       - cfn-lint pipeline/ec2.yml
-      
+      - echo "Hello World!"
+      - aws --version      
 
