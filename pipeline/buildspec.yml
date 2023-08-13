@@ -13,5 +13,6 @@ phases:
       - ls -l
       # - chmod +x pipeline/deploy.sh
       # - pipeline/deploy.sh
-      
+      - npm install -g cfn-lint
+      - cfn-lint --version
 
