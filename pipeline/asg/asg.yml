@@ -1,0 +1,25 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Create an EC2 instance
+
+# Parameters:
+#   EC2UserData:
+#     Type: String
+#     Description: "User data for EC2 instance"
+
+Resources:
+  MyEC2Instance:
+    Type: AWS::EC2::Instance
+    Properties:
+      InstaanceType: t2.micro
+      ImageId: ami-0d147324c76e8210a
+      AvailabilityZone: ap-southeast-2a
+      UserData:
+        Fn::Base64: !Sub |
+          #!/bin/bash
+          yum update -y
+          yum install -y httpd
+          systemctl start httpd
+          echo "<html><body><h1>Hello World!</h1></body></html>" > /var/www/html/index.html
+      Tags:
+        - Key: Name
+          Value: my-ec2-instance

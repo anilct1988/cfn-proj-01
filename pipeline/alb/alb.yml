@@ -6,7 +6,7 @@ Description: Create an EC2 instance
 #     Type: String
 #     Description: "User data for EC2 instance"
 
-Resources:
+Resoudrces:
   MyEC2Instance:
     Type: AWS::EC2::Instance
     Properties:
